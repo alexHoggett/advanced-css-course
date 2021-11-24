@@ -1,0 +1,14 @@
+/* BASIC RESET to make every browser render the page the same way, not really necessary anymore */
+*, *::after, *::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    box-sizing: border-box;
+}
