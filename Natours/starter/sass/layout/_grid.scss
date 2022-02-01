@@ -1,12 +1,23 @@
 .row {
     // always use max-width over width to allow for more responsiveness
     max-width: $grid-width;
+    margin: 0 auto;
+
     margin: 0 auto; // automatically centres block elements inside another element
 
     &:not(:last-child) {
         // selects everything except the last child (every row except for the last one)
 
         margin-bottom: $gutter-vertical; // add space between the rows
+
+        @include respond(tab-port) {
+            margin-bottom: $gutter-vertical-small;
+        }
+    }
+
+    @include respond(tab-port) {
+        max-width: 50rem;
+        padding: 0 3rem;
     }
 
     @include clearfix;
@@ -17,6 +28,15 @@
 
         &:not(:last-child) {
             margin-right: $gutter-horizontal;
+
+            @include respond(tab-port) {
+                margin-right: 0;
+                margin-bottom: $gutter-vertical-small
+            }
+        }
+
+        @include respond(tab-port) {
+            width: 100% !important;
         }
     }
 
